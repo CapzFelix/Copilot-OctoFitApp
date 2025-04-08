@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-+)!))a2x3l=vlw)$6$*@dg0c*c@c0g#wmko#@@+p7(#qvtrxqx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['symmetrical-space-goggles-r4jxqxx67wrhppg-8000.app.github.dev', 'localhost', '127.0.0.1']
 
 
 # Application definition
