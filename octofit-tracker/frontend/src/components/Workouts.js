@@ -1,36 +1,25 @@
+This file fetches and displays workouts from the backend API.
+
 import React, { useEffect, useState } from 'react';
 
 function Workouts() {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch('/api/workouts')
+    fetch('https://symmetrical-space-goggles-r4jxqxx67wrhppg-8000.app.github.dev/api/workouts/')
       .then(response => response.json())
       .then(data => setWorkouts(data))
       .catch(error => console.error('Error fetching workouts:', error));
   }, []);
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <h1 className="card-title">Workouts</h1>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Workout Name</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {workouts.map(workout => (
-              <tr key={workout.id}>
-                <td>{workout.name}</td>
-                <td>{workout.description}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+    <div>
+      <h1>Workouts</h1>
+      <ul>
+        {workouts.map(workout => (
+          <li key={workout._id}>{workout.name} - {workout.description}</li>
+        ))}
+      </ul>
     </div>
   );
 }
